@@ -9,7 +9,11 @@ jobs:
   github-envs:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "check GITHUB_ACTOR ${{ github.env.GITHUB_ACTOR }}, $GITHUB_ACTOR env."
-      - run: echo "check GITHUB_REPOSITORY ${{ github.env.GITHUB_REPOSITORY }}, $GITHUB_REPOSITORY env."
-      - run: echo "check GITHUB_WORKFLOW ${{ github.env.GITHUB_WORKFLOW }}, $GITHUB_WORKFLOW env."
-      - run: echo "check GITHUB_USER ${{ github.env.GITHUB_USER }}, $GITHUB_USER env."
+      - run: echo "check GITHUB_ACTOR ${{ env.GITHUB_ACTOR }}, $GITHUB_ACTOR env."
+      - run: echo "check GITHUB_REPOSITORY ${{ env.GITHUB_REPOSITORY }}, $GITHUB_REPOSITORY env."
+      - run: echo "check GITHUB_WORKFLOW ${{ env.GITHUB_WORKFLOW }}, $GITHUB_WORKFLOW env."
+      - run: echo "check GITHUB_USER ${{ env.GITHUB_USER }}, $GITHUB_USER env."
+      - run: echo "Actor from context ${{ github.actor }}"
+      - run: echo "Repository from context ${{ github.repository }}"
+      - run: echo "Workflow from context ${{ github.workflow }}"
+      - run: echo "User from context ${{ github.user }}"
