@@ -9,3 +9,5 @@ jobs:
       matrix:
         version: [10, 12, 14]
         os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - run: echo "🐧 This job is now running on a ${{ matrix.os }} server with ${{ matrix.version}}"
