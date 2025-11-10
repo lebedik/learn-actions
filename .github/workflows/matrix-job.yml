@@ -1,6 +1,7 @@
 name: Matrix Job
 
-on: [workflow_dispatch]
+on:
+  - workflow_dispatch
 
 jobs:
   example_matrix:
@@ -11,3 +12,4 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - run: echo "🐧 This job is now running on a ${{ matrix.os }} server with ${{ matrix.version}}"
+      - run: echo "${{ github.env}}"
