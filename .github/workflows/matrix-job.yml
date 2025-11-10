@@ -10,6 +10,7 @@ jobs:
       matrix:
         version: [10, 12, 14]
         os: [ubuntu-latest, windows-latest, macos-latest]
+      max-parallel: 2
     steps:
       - run: echo "🐧 This job is now running on a ${{ matrix.os }} server with ${{ matrix.version}}"
       - run: echo "${{ github.env}}"
